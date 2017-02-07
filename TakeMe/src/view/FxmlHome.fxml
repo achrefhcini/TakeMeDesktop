@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.layout.StackPane?>
+<StackPane id="AnchorPane" alignment="TOP_LEFT" prefHeight="443.0" prefWidth="711.0" style="-fx-background-color: #252f41;"  xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FxmlActivityController">
+
+</StackPane>

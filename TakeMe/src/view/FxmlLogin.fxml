@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@../ressources/css/all.css"  fx:controller="controller.FxmlLoginController" >
+   <children>
+      <Pane prefHeight="610.0" prefWidth="400.0" style="-fx-background-color: #61d4c3;">
+         <children>
+            <ImageView fitHeight="38.0" fitWidth="84.0" layoutX="48.0" layoutY="14.0">
+               <image>
+                  <Image url="@../ressources/img/img/nuag.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="73.0" layoutX="207.0" layoutY="68.0">
+               <image>
+                  <Image url="@../ressources/img/img/nuag.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="248.0" fitWidth="187.0" layoutX="51.0" layoutY="186.0">
+               <image>
+                  <Image url="@../ressources/img/img/driver.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="31.0" layoutY="435.0" text="Vous-êtes un conducteur ?" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXButton buttonType="RAISED" graphicTextGap="2.0" layoutX="306.0" layoutY="316.0" prefHeight="31.0" prefWidth="84.0" ripplerFill="#141922" style="-fx-background-color: #252f41;" text="Connexion" textFill="#d3d3d3" textOverrun="CENTER_ELLIPSIS" wrapText="true" onAction="#homeLoader">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView fx:id="fb" accessibleRole="BUTTON" layoutX="355.0" layoutY="468.0">
+               <image>
+                  <Image url="@../ressources/img/img/fb.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="400.0" prefHeight="610.0" prefWidth="410.0" style="-fx-background-color: #252f41;">
+         <children>
+            <ImageView fitHeight="38.0" fitWidth="84.0" layoutX="268.0" layoutY="14.0">
+               <image>
+                  <Image url="@../ressources/img/img/nuag.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="36.0" fitWidth="73.0" layoutX="127.0" layoutY="63.0">
+               <image>
+                  <Image url="@../ressources/img/img/nuag.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="238.0" fitWidth="224.0" layoutX="166.0" layoutY="196.0">
+               <image>
+                  <Image url="@../ressources/img/img/passanger.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="167.0" layoutY="432.0" text="Vous-êtes un passager ?" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="6.0" layoutY="327.0" text="Mot de passe oublié ?" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <ImageView fx:id="google" accessibleRole="BUTTON" layoutX="9.0" layoutY="468.0">
+               <image>
+                  <Image url="@../ressources/img/img/googleplus.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="alerterror" layoutX="115.0" layoutY="217.0" opacity="0.0">
+               <image>
+                  <Image url="@../ressources/img/img/error.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ImageView fitHeight="72.0" fitWidth="200.0" layoutX="287.5">
+         <image>
+            <Image url="@../ressources/img/img/logo.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="textFieldLoginEmail" alignment="CENTER" focusColor="WHITE" layoutX="287.0" layoutY="199.0" maxWidth="263.0" minWidth="159.0" opacity="0.9" prefHeight="37.0" prefWidth="224.0" promptText="Adresse e-mail "
+                    style="-fx-background-color: #37796f;" unFocusColor="#61d4c3"    onMouseExited="#EmailMousehover">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </JFXTextField>
+      <JFXPasswordField  fx:id="textFieldLoginPassword" alignment="TOP_CENTER" focusColor="WHITE" layoutX="287.0" layoutY="249.0" maxWidth="224.0" minWidth="159.0" opacity="0.9" prefHeight="37.0" prefWidth="224.0" promptText="Mot de passe" style="-fx-background-color: #37796f;"
+                        onKeyPressed="#EmailKeyevent"   onMouseEntered="#EmailMousehover" unFocusColor="#61d4c3" >
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </JFXPasswordField>
+      <JFXButton layoutX="316.0" layoutY="382.0" ripplerFill="#250000" style="-fx-background-color: #61d4c3; -fx-border-color: #37796f;" text="Créer un compte" textFill="#252f41" fx:id="btnSignUp" onAction="#SignUpLoader">
+         <font>
+            <Font name="Elephant" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</Pane>
