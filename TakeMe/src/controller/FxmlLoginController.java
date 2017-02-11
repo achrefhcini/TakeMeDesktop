@@ -1,4 +1,5 @@
 package controller;
+import controller.mains.LoginFB;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import java.net.URL;
@@ -118,6 +119,14 @@ public class FxmlLoginController {
             ((Node)(event.getSource())).getScene().getWindow().hide();
         }
 
+    }
+
+    @FXML
+    void LoginFBLoad(MouseEvent event) throws Exception {
+        System.out.println("Load login Gui");
+        LoginFB loginfb =new LoginFB();
+        loginfb.start(new Stage());
+        ((Node)(event.getSource())).getScene().getWindow().hide();
     }
 
 

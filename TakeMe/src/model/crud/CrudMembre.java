@@ -24,9 +24,9 @@ public class CrudMembre implements ICrudMembre {
     public boolean ajouterMembre(Membre m) {
 
 
-        String req="insert into membre"+
-                " (role,nom,prenom,num_tel,email,photo,age,sexe,password,verifMail,verifTel,CodeVerifMail,CodeVerifTel,isActif)"+
-                "Values(?,?,?,?,"
+        String req="insert into membre "+
+                " (role,nom,prenom,num_tel,email,photo,age,sexe,password,verifMail,verifTel,CodeVerifMail,CodeVerifTel,isActif) "+
+                " Values(?,?,?,?,"
                 +"?,?,?,?,?,?,?,"
                 +"?,?,?)";
         try {
@@ -295,7 +295,32 @@ public class CrudMembre implements ICrudMembre {
             ResultSet rs=ste.executeQuery(req);
             if (rs.next())
             {
-                return rs.getInt(1);
+                int id_membre=rs.getInt(1);
+                Membre.IdUserConnected=id_membre;
+                return id_membre;
+
+            }
+            else
+                return 0;
+        } catch (SQLException e) {
+            System.out.println(e.toString());
+            return 0;
+        }
+
+    }
+
+    public int VerfiConnecionFB(String email){
+        String emailuser="'"+email+"'";
+        try {
+            String req="SELECT id_membre FROM membre WHERE  email = "+ emailuser+" ";
+            ste=c.createStatement();
+            ResultSet rs=ste.executeQuery(req);
+            if (rs.next())
+            {
+                int id_membre=rs.getInt(1);
+                Membre.IdUserConnected=id_membre;
+                return id_membre;
+
             }
             else
                 return 0;

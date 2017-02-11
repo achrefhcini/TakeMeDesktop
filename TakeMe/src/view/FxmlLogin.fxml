@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@../ressources/css/all.css"  fx:controller="controller.FxmlLoginController" >
+<Pane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../ressources/css/all.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FxmlLoginController">
    <children>
       <Pane prefHeight="610.0" prefWidth="400.0" style="-fx-background-color: #61d4c3;">
          <children>
@@ -36,7 +36,7 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <JFXButton buttonType="RAISED" graphicTextGap="2.0" layoutX="306.0" layoutY="316.0" prefHeight="31.0" prefWidth="84.0" ripplerFill="#141922" style="-fx-background-color: #252f41;" text="Connexion" textFill="#d3d3d3" textOverrun="CENTER_ELLIPSIS" wrapText="true" onAction="#homeLoader">
+            <JFXButton buttonType="RAISED" graphicTextGap="2.0" layoutX="306.0" layoutY="316.0" onAction="#homeLoader" prefHeight="31.0" prefWidth="84.0" ripplerFill="#141922" style="-fx-background-color: #252f41;" text="Connexion" textFill="#d3d3d3" textOverrun="CENTER_ELLIPSIS" wrapText="true">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font>
@@ -44,7 +44,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <ImageView fx:id="fb" accessibleRole="BUTTON" layoutX="355.0" layoutY="468.0">
+            <ImageView fx:id="fb" accessibleRole="BUTTON" layoutX="355.0" layoutY="468.0" onMouseClicked="#LoginFBLoad">
                <image>
                   <Image url="@../ressources/img/img/fb.png" />
                </image>
@@ -104,8 +104,7 @@
             <Image url="@../ressources/img/img/logo.png" />
          </image>
       </ImageView>
-      <JFXTextField fx:id="textFieldLoginEmail" alignment="CENTER" focusColor="WHITE" layoutX="287.0" layoutY="199.0" maxWidth="263.0" minWidth="159.0" opacity="0.9" prefHeight="37.0" prefWidth="224.0" promptText="Adresse e-mail "
-                    style="-fx-background-color: #37796f;" unFocusColor="#61d4c3"    onMouseExited="#EmailMousehover">
+      <JFXTextField fx:id="textFieldLoginEmail" alignment="CENTER" focusColor="WHITE" layoutX="287.0" layoutY="199.0" maxWidth="263.0" minWidth="159.0" onMouseExited="#EmailMousehover" opacity="0.9" prefHeight="37.0" prefWidth="224.0" promptText="Adresse e-mail " style="-fx-background-color: #37796f;" unFocusColor="#61d4c3">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -119,8 +118,7 @@
             <ColorAdjust />
          </effect>
       </JFXTextField>
-      <JFXPasswordField  fx:id="textFieldLoginPassword" alignment="TOP_CENTER" focusColor="WHITE" layoutX="287.0" layoutY="249.0" maxWidth="224.0" minWidth="159.0" opacity="0.9" prefHeight="37.0" prefWidth="224.0" promptText="Mot de passe" style="-fx-background-color: #37796f;"
-                        onKeyPressed="#EmailKeyevent"   onMouseEntered="#EmailMousehover" unFocusColor="#61d4c3" >
+      <JFXPasswordField fx:id="textFieldLoginPassword" alignment="TOP_CENTER" focusColor="WHITE" layoutX="287.0" layoutY="249.0" maxWidth="224.0" minWidth="159.0" onKeyPressed="#EmailKeyevent" onMouseEntered="#EmailMousehover" opacity="0.9" prefHeight="37.0" prefWidth="224.0" promptText="Mot de passe" style="-fx-background-color: #37796f;" unFocusColor="#61d4c3">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -128,7 +126,7 @@
             <ColorAdjust />
          </effect>
       </JFXPasswordField>
-      <JFXButton layoutX="316.0" layoutY="382.0" ripplerFill="#250000" style="-fx-background-color: #61d4c3; -fx-border-color: #37796f;" text="Créer un compte" textFill="#252f41" fx:id="btnSignUp" onAction="#SignUpLoader">
+      <JFXButton fx:id="btnSignUp" layoutX="316.0" layoutY="382.0" onAction="#SignUpLoader" ripplerFill="#250000" style="-fx-background-color: #61d4c3; -fx-border-color: #37796f;" text="Créer un compte" textFill="#252f41">
          <font>
             <Font name="Elephant" size="17.0" />
          </font>
