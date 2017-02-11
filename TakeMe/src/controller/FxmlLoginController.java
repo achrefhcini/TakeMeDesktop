@@ -1,5 +1,6 @@
 package controller;
 import controller.mains.LoginFB;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import java.net.URL;
@@ -29,6 +30,10 @@ public class FxmlLoginController {
     private ImageView alerterror;
     @FXML
     private JFXPasswordField textFieldLoginPassword;
+    @FXML
+    private ImageView WvLogin;
+    @FXML
+    private Label vLogin;
 
     private Boolean checkemail=false;
 
@@ -117,6 +122,10 @@ public class FxmlLoginController {
             home.start(new Stage());
 
             ((Node)(event.getSource())).getScene().getWindow().hide();
+        }
+        else if(idmembre==0){
+            WvLogin.setVisible(true);
+            vLogin.setVisible(true);
         }
 
     }

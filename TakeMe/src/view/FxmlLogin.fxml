@@ -36,7 +36,7 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <JFXButton buttonType="RAISED" graphicTextGap="2.0" layoutX="306.0" layoutY="316.0" onAction="#homeLoader" prefHeight="31.0" prefWidth="84.0" ripplerFill="#141922" style="-fx-background-color: #252f41;" text="Connexion" textFill="#d3d3d3" textOverrun="CENTER_ELLIPSIS" wrapText="true">
+            <JFXButton buttonType="RAISED" graphicTextGap="2.0" layoutX="306.0" layoutY="323.0" onAction="#homeLoader" prefHeight="31.0" prefWidth="84.0" ripplerFill="#141922" style="-fx-background-color: #252f41;" text="Connexion" textFill="#d3d3d3" textOverrun="CENTER_ELLIPSIS" wrapText="true">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font>
@@ -51,6 +51,11 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+            </ImageView>
+            <ImageView fx:id="WvLogin" fitHeight="17.0" fitWidth="18.0" layoutX="293.0" layoutY="294.0" visible="false">
+               <image>
+                  <Image url="@../ressources/img/img/warning.png" />
+               </image>
             </ImageView>
          </children>
       </Pane>
@@ -76,7 +81,7 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="6.0" layoutY="327.0" text="Mot de passe oublié ?" textFill="WHITE">
+            <Label layoutX="6.0" layoutY="334.0" text="Mot de passe oublié ?" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="10.0" />
                </font>
@@ -134,5 +139,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <Label fx:id="vLogin" layoutX="314.0" layoutY="294.0" text="Invalide E-mail ou Password " textFill="#ff4747" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
