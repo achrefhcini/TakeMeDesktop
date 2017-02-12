@@ -11,6 +11,7 @@ import java.util.ArrayList;
  * Created by Green on 03/02/2017.
  */
 public class CrudMembre implements ICrudMembre {
+    public static Integer IdUserConnected=0;
     Connection c ;
     Statement ste ;
     PreparedStatement prepste;
@@ -296,8 +297,8 @@ public class CrudMembre implements ICrudMembre {
             if (rs.next())
             {
                 int id_membre=rs.getInt(1);
-                Membre.IdUserConnected=id_membre;
-                System.out.println(Membre.IdUserConnected);
+                this.IdUserConnected=id_membre;
+                System.out.println(this.IdUserConnected);
                 return id_membre;
 
             }
@@ -320,7 +321,7 @@ public class CrudMembre implements ICrudMembre {
             if (rs.next())
             {
                 int id_membre=rs.getInt(1);
-                Membre.IdUserConnected=id_membre;
+                this.IdUserConnected=id_membre;
                 return id_membre;
 
             }

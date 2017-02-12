@@ -19,9 +19,9 @@ import java.sql.SQLException;
  */
 public class DBConnect {
     private static Connection conn;
-    private static String url = "jdbc:mysql://sql11.freesqldatabase.com:3306/sql11157205";
-    private static String user = "sql11157205";
-    private static String pass = "19plrCc2Bs";
+    private static String url = "jdbc:mysql://localhost:3306/takeme";
+    private static String user = "root";
+    private static String pass = "";
 
     public static Connection connect() throws SQLException{
         try{

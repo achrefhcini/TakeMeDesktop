@@ -141,3 +141,10 @@ and open the template in the editor.
 #BackLogin:hover{
 -fx-underline : true;
 }
+#leftbarre:hover{
+-fx-opacity : 0.3;
+}
+#rightbarre:hover{
+-fx-opacity : 0.3;
+}
+

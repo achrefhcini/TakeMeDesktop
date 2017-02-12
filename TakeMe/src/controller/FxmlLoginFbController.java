@@ -53,7 +53,7 @@ public class FxmlLoginFbController {
             Menu home = new Menu();
             home.start(new Stage());
             System.out.println("old");
-            System.out.println(Membre.IdUserConnected);
+            System.out.println(CrudMembre.IdUserConnected);
             System.out.println(m1.toString());
             Stage stage = (Stage) this.LoginViewFB.getScene().getWindow();
 
@@ -62,7 +62,7 @@ public class FxmlLoginFbController {
         else   if(crudMembre.VerfiConnecionFB(this.m1.getEmail())==0){
             crudMembre.ajouterMembre(this.m1);
             crudMembre.VerfiConnecionFB(m1.getEmail());
-            System.out.println(Membre.IdUserConnected);
+            System.out.println(CrudMembre.IdUserConnected);
             Menu home = new Menu();
             home.start(new Stage());
             System.out.println("new");

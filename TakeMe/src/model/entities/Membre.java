@@ -4,7 +4,6 @@ package model.entities;
  * Created by Green on 03/02/2017.
  */
 public class Membre {
-    public static Integer IdUserConnected=0;
     private Integer id_membre;
     private String role;
     private String nom;
