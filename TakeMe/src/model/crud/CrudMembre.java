@@ -11,7 +11,9 @@ import java.util.ArrayList;
  * Created by Green on 03/02/2017.
  */
 public class CrudMembre implements ICrudMembre {
+    public static int idFromSelect=1;
     public static Integer IdUserConnected=0;
+    public static Membre membreViewProfil;
     Connection c ;
     Statement ste ;
     PreparedStatement prepste;
@@ -332,6 +334,30 @@ public class CrudMembre implements ICrudMembre {
             return 0;
         }
 
+    }
+
+
+    public ArrayList<Membre> afficherMembresByrange(int idFrom,int idTo) {
+        ArrayList<Membre>list=new ArrayList();
+        try {
+           String req= "SELECT * FROM membre WHERE verifMail = 1 AND id_membre BETWEEN '"+idFrom+"' AND '"+idTo+"' ORDER BY id_membre ASC ";
+            ste=c.createStatement();
+            ResultSet rs=ste.executeQuery(req);
+            if (rs.next())
+            {
+                list.add(tabToIns(rs));
+                while (rs.next())
+                {
+                    list.add(tabToIns(rs));
+                }
+                return list;
+            }
+            else
+                return list;
+        } catch (SQLException e) {
+            System.out.println(e.toString());
+            return list;
+        }
     }
 
 

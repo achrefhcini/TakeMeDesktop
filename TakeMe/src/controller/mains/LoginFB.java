@@ -26,12 +26,14 @@ public class LoginFB extends Application {
         final WebView browser = new WebView();
         final WebEngine webEngine = browser.getEngine();
         BorderPane root = FXMLLoader.load(getClass().getResource("../../view/FxmlLoginFB.fxml"));
-        webEngine.load("https://goo.gl/PBmExE");
+        webEngine.load("https://goo.gl/o41o99");
         webEngine.getLoadWorker().stateProperty().addListener(new ChangeListener<Worker.State>() {
+            int nbrredirect=0;
             @Override
             public void changed(ObservableValue<? extends Worker.State> ov, Worker.State oldState, Worker.State newState) {
 
                 if (newState == Worker.State.SUCCEEDED) {
+
 
                     String lien = browser.getEngine().getLocation() ;
                     System.out.println(lien);
@@ -48,7 +50,11 @@ public class LoginFB extends Application {
                         }
                     }
                     else if(lien.contains("https://www.facebook.com/v2.8/dialog/oauth?redirect_uri")){
-                        webEngine.load("http://webshc.com/take.php");
+                        nbrredirect++;
+
+                           // webEngine.load("http://webshc.com/take.php");
+
+
                     }  }} });
      root.setCenter(browser);
 
@@ -56,7 +62,7 @@ public class LoginFB extends Application {
         primaryStage.setTitle("Take Me");
         primaryStage.getIcons().add(new Image("ressources/img/img/logo.png"));
         primaryStage.setScene(new Scene(root, 800, 600));
-        primaryStage.setResizable(false);
+        //primaryStage.setResizable(false);
         primaryStage.show();
 
 

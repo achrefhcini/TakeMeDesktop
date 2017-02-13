@@ -12,5 +12,6 @@ public interface ICrudMembre {
     public boolean modifierMembre(Membre e);
     public ArrayList<Membre> afficherMembres();
     public Membre afficherMembreById(int id);
+    public ArrayList<Membre> afficherMembresByrange(int idFrom,int idTo);
 
 }

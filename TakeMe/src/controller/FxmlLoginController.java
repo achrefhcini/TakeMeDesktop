@@ -1,5 +1,5 @@
 package controller;
-import controller.mains.LoginFB;
+import controller.mains.*;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
@@ -15,10 +15,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
-import controller.mains.SignUp;
 import javafx.scene.Node;
 import javafx.stage.Stage;
-import controller.mains.Menu;
 import model.crud.CrudMembre;
 
 public class FxmlLoginController {
@@ -36,6 +34,40 @@ public class FxmlLoginController {
     private Label vLogin;
 
     private Boolean checkemail=false;
+    private int nbrClicknuag1=0,nbrClicknuag12=0,nbrClicknuag3=0;
+    @FXML
+    void clickNuag1(MouseEvent event) {
+        nbrClicknuag1++;
+    }
+
+    @FXML
+    void clickNuag2(MouseEvent event) {
+        nbrClicknuag12++;
+    }
+
+    @FXML
+    void clickNuag3(MouseEvent event) {
+        nbrClicknuag3++;
+
+    }
+
+    @FXML
+    void clickNuag4(MouseEvent event) throws Exception {
+        System.out.println(nbrClicknuag1);
+        if ((nbrClicknuag1==2)&&(nbrClicknuag12==1)&&(nbrClicknuag3==2)){
+            System.out.println("hello");
+            LoginAdmin loginAdmin =new LoginAdmin();
+            loginAdmin.start(new Stage());
+            ((Node)(event.getSource())).getScene().getWindow().hide();
+
+        }
+        else {
+            nbrClicknuag1=0;nbrClicknuag12=0;nbrClicknuag3=0;
+        }
+
+    }
+
+
 
     @FXML
     void EmailMousehover(MouseEvent event) {
