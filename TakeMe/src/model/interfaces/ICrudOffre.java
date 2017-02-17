@@ -1,5 +1,6 @@
 package model.interfaces;
 
+import model.entities.Membre;
 import model.entities.Offre;
 
 import java.util.ArrayList;
@@ -13,4 +14,8 @@ public interface ICrudOffre {
     public boolean modifierOffre(Offre o);
     public Offre afficherOffre(int id);
     public ArrayList<Offre> afficherOffres();
+    //mehdi
+    public int coutMaxOffre();
+    public int afficherOffreCouts(float a, float b);
+
 }

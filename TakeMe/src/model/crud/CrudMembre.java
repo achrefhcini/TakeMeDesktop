@@ -14,6 +14,8 @@ public class CrudMembre implements ICrudMembre {
     public static int idFromSelect=1;
     public static Integer IdUserConnected=0;
     public static Membre membreViewProfil;
+    public static Membre membreSelectPwdChange;
+    public static ArrayList<Membre> membresFoundedPwdChange;
     Connection c ;
     Statement ste ;
     PreparedStatement prepste;
@@ -314,6 +316,32 @@ public class CrudMembre implements ICrudMembre {
 
     }
 
+    public int VerfiConnexionAdmin(String email,String password){
+        MD5hashing md5=new MD5hashing(password);
+        String emailuser="'"+email+"'";
+        String PasswordMd5Hash="'"+md5.Md5Encrypt()+"'";
+        try {
+            String req="SELECT id_membre FROM membre WHERE  password = "+PasswordMd5Hash+" AND email = "+ emailuser+" AND verifMail = 1 AND isActif = 1 AND role = 'Administrateur' ";
+            ste=c.createStatement();
+            ResultSet rs=ste.executeQuery(req);
+            if (rs.next())
+            {
+                int id_membre=rs.getInt(1);
+                this.IdUserConnected=id_membre;
+                System.out.println(this.IdUserConnected);
+                return id_membre;
+
+            }
+            else
+                return 0;
+
+        } catch (SQLException e) {
+            System.out.println(e.toString());
+            return 0;
+        }
+
+    }
+
     public int VerfiConnecionFB(String email){
         String emailuser="'"+email+"'";
         try {
@@ -361,6 +389,125 @@ public class CrudMembre implements ICrudMembre {
     }
 
 
+
+    //ajouter par mehdi
+
+    @Override
+    public int ageMaxMembre() {
+        int ageMax = 0;
+        String req = "SELECT MAX(age) FROM membre ";
+        try {
+            ste = c.createStatement();
+            ResultSet rs = ste.executeQuery(req);
+            while (rs.next()) {
+                ageMax = rs.getInt(1);
+                return ageMax;
+
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.toString());
+            return 0;
+        }
+        return ageMax;
+    }
+
+    @Override
+    public int nombreMembresHommes() {
+        ArrayList<Membre> MembreHomme = new ArrayList<>();
+        int nombreHommes = 0;
+        String req = "SELECT COUNT(*) FROM membre where sexe= 'm'";
+        try {
+            ste = c.createStatement();
+            ResultSet rs = ste.executeQuery(req);
+            while (rs.next()) {
+                nombreHommes = rs.getInt(1);
+                return nombreHommes;
+
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.toString());
+            return 0;
+        }
+        return nombreHommes;
+    }
+
+
+    @Override
+    public int nombreMembresFemmes() {
+        ArrayList<Membre> MembreFemmes = new ArrayList<>();
+        int nombreFemmes = 0;
+        String req = "SELECT COUNT(*) FROM membre where sexe= 'f'";
+        try {
+            ste = c.createStatement();
+            ResultSet rs = ste.executeQuery(req);
+            while (rs.next()) {
+                nombreFemmes = rs.getInt(1);
+                return nombreFemmes;
+
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.toString());
+            return 0;
+        }
+        return nombreFemmes;
+    }
+    @Override
+    public ArrayList<Membre> afficherMembreAges(int from_age,int to_age) {
+        ArrayList<Membre>list=new ArrayList();
+        String req="SELECT * from membre where age between '"+from_age+"' AND '" +to_age+"'";
+
+        try {
+            ste=c.createStatement();
+            ResultSet rs=ste.executeQuery(req);
+            if (rs.next())
+            {
+                list.add(tabToIns(rs));
+                while (rs.next())
+                {
+                    list.add(tabToIns(rs));
+                }
+                return list;
+            }
+            else
+                return list;
+        } catch (SQLException e) {
+            System.out.println(e.toString());
+        }
+        return list;
+
+    }
+
+    //achref
+
+    public ArrayList<Membre> findUserByChamp(String champ){
+        ArrayList<Membre>list=new ArrayList();
+        String[] splited = champ.split("\\s+");
+
+        String req="SELECT * from membre where num_tel = '"+champ+"' OR email ='"+champ+"'  OR ( LOCATE(nom,'"+champ+"') > 0  AND  LOCATE(prenom,'"+champ+"') > 0  )";
+
+        try {
+            ste=c.createStatement();
+            ResultSet rs=ste.executeQuery(req);
+            if (rs.next())
+            {
+                list.add(tabToIns(rs));
+                while (rs.next())
+                {
+                    list.add(tabToIns(rs));
+                }
+                return list;
+            }
+            else
+                return list;
+        } catch (SQLException e) {
+            System.out.println(e.toString());
+        }
+
+return list;
+    }
 
 
 }

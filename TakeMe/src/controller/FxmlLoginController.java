@@ -50,6 +50,13 @@ public class FxmlLoginController {
         nbrClicknuag3++;
 
     }
+    @FXML
+    void LoginGpLoad(MouseEvent event) throws Exception {
+        System.out.println("Load login FB Gui");
+        LoginGPlus loginGPlus =new LoginGPlus();
+        loginGPlus.start(new Stage());
+        ((Node)(event.getSource())).getScene().getWindow().hide();
+    }
 
     @FXML
     void clickNuag4(MouseEvent event) throws Exception {
@@ -164,14 +171,22 @@ public class FxmlLoginController {
 
     @FXML
     void LoginFBLoad(MouseEvent event) throws Exception {
-        System.out.println("Load login Gui");
+        System.out.println("Load login FB Gui");
         LoginFB loginfb =new LoginFB();
         loginfb.start(new Stage());
         ((Node)(event.getSource())).getScene().getWindow().hide();
     }
 
 
+    @FXML
+    void forgetPwd(MouseEvent event) throws Exception {
 
+        System.out.println("Load findUser Gui");
+        FindUser findUser =new FindUser();
+        findUser.start(new Stage());
+        ((Node)(event.getSource())).getScene().getWindow().hide();
+
+    }
 
 
 }

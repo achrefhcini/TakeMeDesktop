@@ -225,4 +225,49 @@ public class CrudOffre implements ICrudOffre {
             return null;
         }
     }
+
+    //mehdi
+
+    @Override
+    public int coutMaxOffre() {
+        int coutMax = 0;
+        String req = "SELECT MAX(cout) FROM offre ";
+        try {
+            ste = c.createStatement();
+            ResultSet rs = ste.executeQuery(req);
+            while (rs.next()) {
+                coutMax = rs.getInt(1);
+                return coutMax;
+
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.toString());
+            return 0;
+        }
+        return coutMax;
+    }
+
+    @Override
+    public int afficherOffreCouts(float a, float b) {
+        //ArrayList<Offre> SessionUser=new ArrayList<>();
+        String reqSelect="SELECT count(*) from offre where cout between '"+a+"' AND '" +b+"'";
+        int nombreCouts=0;
+        try {
+
+            ste=c.createStatement();
+            ResultSet rs=ste.executeQuery(reqSelect);
+            while(rs.next()){
+                nombreCouts =rs.getInt(1);
+
+                return nombreCouts;
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return nombreCouts;
+    }
+
+
 }
