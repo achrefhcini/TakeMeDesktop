@@ -1,6 +1,9 @@
 package model.crud;
 
 import database.DBConnect;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.chart.PieChart;
 import model.entities.Membre;
 import model.interfaces.ICrudMembre;
 import controller.MD5hashing;
@@ -189,7 +192,9 @@ public class CrudMembre implements ICrudMembre {
                 prepste.setNull( 8, java.sql.Types.VARCHAR );
             }
             if (m.getPassword()!=null) {
-                prepste.setString(9,m.getPassword());
+                MD5hashing md5=new MD5hashing(m.getPassword());
+                String PasswordMd5Hash=md5.Md5Encrypt();
+                prepste.setString(9,PasswordMd5Hash);
             } else {
                 prepste.setNull( 9, java.sql.Types.VARCHAR );
             }
@@ -508,6 +513,33 @@ public class CrudMembre implements ICrudMembre {
 
 return list;
     }
+
+
+public ObservableList buildDataSexe(){
+
+    String SQL1= "select count(id_membre),sexe from membre  group by sexe";
+    try{
+
+        //SQL FOR SELECTING NATIONALITY OF CUSTOMER
+        ObservableList data = FXCollections.observableArrayList();
+
+        ste = c.createStatement();
+        ResultSet rs = ste.executeQuery(SQL1);
+        while(rs.next()){
+
+            //adding data on piechart data
+
+            data.add(new PieChart.Data(rs.getString(2),rs.getDouble(1)));
+
+        }
+        return data;
+
+    }catch(Exception e){
+        System.out.println("Error on DB connection");
+        return null;
+    }
+}
+
 
 
 }

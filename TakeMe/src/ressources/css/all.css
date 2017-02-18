@@ -147,5 +147,11 @@ and open the template in the editor.
 #barreleft:hover{
 -fx-opacity : 0.3;
 }
+#viewprofil:hover{
+-fx-image: url('../img/menu_hover/voirprofil.png');
+}
+#viewprofil{
+-fx-image: url('../img/menu_hover/voirprofil.png');
+}
 
 
