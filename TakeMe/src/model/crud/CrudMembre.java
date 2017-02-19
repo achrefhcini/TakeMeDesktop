@@ -290,6 +290,7 @@ public class CrudMembre implements ICrudMembre {
         m.setVerifTel((Boolean) rs.getObject(12));
         m.setCodeVerifMail((Integer) rs.getObject(13));
         m.setCodeVerifTel((Integer) rs.getObject(14));
+        m.setActif((Boolean) rs.getObject(15));
         return m;
     }
 
@@ -370,10 +371,13 @@ public class CrudMembre implements ICrudMembre {
     }
 
 
-    public ArrayList<Membre> afficherMembresByrange(int idFrom,int idTo) {
+    public ArrayList<Membre> afficherMembresByrange(int idFrom,int idTo,String condition) {
         ArrayList<Membre>list=new ArrayList();
+        if(condition==null){
+            condition="ORDER BY id_membre ASC";
+        }
         try {
-           String req= "SELECT * FROM membre WHERE verifMail = 1 AND id_membre BETWEEN '"+idFrom+"' AND '"+idTo+"' ORDER BY id_membre ASC ";
+           String req= "SELECT * FROM membre WHERE verifMail = 1 AND id_membre BETWEEN '"+idFrom+"' AND '"+idTo+"' "+condition+"";
             ste=c.createStatement();
             ResultSet rs=ste.executeQuery(req);
             if (rs.next())
@@ -541,7 +545,7 @@ public ObservableList buildDataSexe(){
 }
 
 public int countMembre(){
-    String req="SELECT count(*) from membre";
+    String req="SELECT count(*) from membre where verifMail=1";
     try {
         ste = c.createStatement();
         ResultSet rs = ste.executeQuery(req);
@@ -558,6 +562,47 @@ public int countMembre(){
 
         return 0;
 }
+
+public Boolean debloquerMembre(Membre membre){
+    String req="UPDATE membre SET isActif =?  where id_membre= '"+membre.getId_membre()+"'";
+    try {
+        prepste= c.prepareStatement(req);
+        if (membre.isActif()!=null) {
+            prepste.setBoolean(1,membre.isActif());
+        } else {
+            prepste.setNull( 1, Types.BOOLEAN );
+        }
+
+
+        System.out.println(prepste);
+        prepste.executeUpdate();
+        return true;
+    } catch (SQLException e) {
+        e.printStackTrace();
+        return false;
+    }
+}
+
+
+    public Boolean bloquerMembre(Membre membre){
+        String req="UPDATE membre SET isActif =?  where id_membre= '"+membre.getId_membre()+"'";
+        try {
+            prepste= c.prepareStatement(req);
+            if (membre.isActif()!=null) {
+                prepste.setBoolean(1,membre.isActif());
+            } else {
+                prepste.setNull( 1, Types.BOOLEAN );
+            }
+
+
+            System.out.println(prepste);
+            prepste.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
 
 

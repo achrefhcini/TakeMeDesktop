@@ -16,16 +16,16 @@ public class TestCrudMembre {
         membre.setPassword("hello world");
         System.out.println(membre.getPassword());
 
-        crudMembre.ajouterMembre(membre);
 
 
-      /*  ArrayList<Membre> list=crudMembre.afficherMembres();
+
+      ArrayList<Membre> list=crudMembre.afficherMembres();
         if(!(list.isEmpty())){
-            list.forEach(e->System.out.println(e.toString()));
+            list.forEach(e->System.out.println(e.isActif()));
         }
 
 
-*/
+
 
 
     }

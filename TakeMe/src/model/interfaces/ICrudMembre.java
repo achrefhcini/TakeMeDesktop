@@ -14,7 +14,7 @@ public interface ICrudMembre {
     public boolean modifierMembre(Membre e);
     public ArrayList<Membre> afficherMembres();
     ArrayList<Membre> afficherMembreAges(int from_age,int to_age);
-    public ArrayList<Membre> afficherMembresByrange(int idFrom,int idTo);
+    public ArrayList<Membre> afficherMembresByrange(int idFrom,int idTo,String condition);
     public int ageMaxMembre();
     public int nombreMembresHommes() throws SQLException;
     public int nombreMembresFemmes() throws SQLException;
