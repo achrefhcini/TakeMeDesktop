@@ -1,54 +1,49 @@
 package database;
 
 
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
-/**
- *
- * @author arbi
- */
 public class DBConnect {
-    private static Connection conn;
-    private static String url = "jdbc:mysql://localhost:3306/takeme";
-    private static String user = "root";
-    private static String pass = "";
 
-    public static Connection connect() throws SQLException{
-        try{
+
+    String login="root";
+    String pwd="";
+    String url="jdbc:mysql://localhost:3306/takeme";
+    static Connection instanceConnection;
+
+    private DBConnect() {
+
+        try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            System.out.println("Connexion success");
-        }catch(ClassNotFoundException cnfe){
-            System.err.println("Error: "+cnfe.getMessage());
-        }catch(InstantiationException ie){
-            System.err.println("Error: "+ie.getMessage());
-        }catch(IllegalAccessException iae){
-            System.err.println("Error: "+iae.getMessage());
+            instanceConnection= DriverManager.getConnection(url,login, pwd);
+            System.out.println("connexion reussie");
+        } catch (SQLException ex) {
+            System.out.println("faux");
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static Connection getInstance(){
+
+        if(instanceConnection == null)
+        {
+            new DBConnect();
         }
 
-        conn = DriverManager.getConnection(url,user,pass);
-        return conn;
+        return instanceConnection;
     }
-    public static Connection getConnection() throws SQLException, ClassNotFoundException{
-        if(conn !=null && !conn.isClosed())
-            return conn;
-        connect();
-        return conn;
 
-    }
+
+
+
 }
-/*
-*   test database
-*    Connection c ;
-*    c=DBConnect.connect();
-*
-* */

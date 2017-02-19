@@ -20,7 +20,7 @@ public class CrudMessage implements ICrudMessage {
     PreparedStatement prepste;
 
     public CrudMessage() throws SQLException {
-        c= DBConnect.connect();
+        c= DBConnect.getInstance();
     }
     @Override
     public boolean ajouterMessage(Message m) {

@@ -17,7 +17,7 @@ public class CrudEvaluation implements ICrudEvaluation {
     PreparedStatement prepste;
 
     public CrudEvaluation() throws SQLException, ClassNotFoundException {
-        c=DBConnect.getConnection();
+        c=DBConnect.getInstance();
     }
 
 

@@ -14,7 +14,7 @@ public class CrudTrajet implements ICrudTrajet{
     Statement ste ;
     PreparedStatement prepste;
     public CrudTrajet() throws SQLException {
-        c= DBConnect.connect();
+        c= DBConnect.getInstance();
     }
     @Override
     public boolean ajouterTrajet(Trajet t) {

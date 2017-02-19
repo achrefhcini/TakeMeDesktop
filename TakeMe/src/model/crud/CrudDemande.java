@@ -37,7 +37,7 @@ public class CrudDemande  implements ICrudDemande {
     
     public CrudDemande() throws SQLException, ClassNotFoundException {
 
-        cnx= DBConnect.getConnection();
+        cnx= DBConnect.getInstance();
 
     }
     

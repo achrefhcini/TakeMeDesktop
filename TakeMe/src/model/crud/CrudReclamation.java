@@ -19,7 +19,7 @@ public class CrudReclamation implements ICrudReclamation {
     PreparedStatement prepste;
 
     public CrudReclamation() throws SQLException {
-        c= DBConnect.connect();
+        c= DBConnect.getInstance();
     }
     @Override
     public boolean ajouterReclamation(Reclamation R) {

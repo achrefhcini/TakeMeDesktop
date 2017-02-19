@@ -17,7 +17,7 @@ public class CrudFavoris implements ICrudFavoris {
     PreparedStatement prepste;
 
     public CrudFavoris() throws SQLException, ClassNotFoundException {
-        c= DBConnect.getConnection();
+        c= DBConnect.getInstance();
     }
 
 

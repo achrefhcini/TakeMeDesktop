@@ -16,7 +16,7 @@ public class CrudOffre implements ICrudOffre {
     PreparedStatement prepste;
 
     public CrudOffre() throws SQLException {
-        c= DBConnect.connect();
+        c= DBConnect.getInstance();
     }
 
 

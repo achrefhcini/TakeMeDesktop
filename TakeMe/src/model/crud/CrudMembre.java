@@ -24,7 +24,7 @@ public class CrudMembre implements ICrudMembre {
     PreparedStatement prepste;
 
     public CrudMembre() throws SQLException {
-        c=DBConnect.connect();
+        c=DBConnect.getInstance();
     }
 
 
@@ -538,6 +538,25 @@ public ObservableList buildDataSexe(){
         System.out.println("Error on DB connection");
         return null;
     }
+}
+
+public int countMembre(){
+    String req="SELECT count(*) from membre";
+    try {
+        ste = c.createStatement();
+        ResultSet rs = ste.executeQuery(req);
+        while(rs.next()) {
+
+            return rs.getInt(1);
+
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+        return 0;
+    }
+
+
+        return 0;
 }
 
 

@@ -5,12 +5,19 @@ import controller.mains.LoginFB;
 import controller.mains.Menu;
 import javafx.application.Platform;
 import javafx.scene.Node;
+import javafx.scene.image.Image;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import model.crud.CrudMembre;
 import model.entities.Membre;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import tray.animations.AnimationType;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
+
 import java.sql.SQLException;
 
 /**
@@ -55,6 +62,14 @@ public class FxmlLoginFbController {
             System.out.println("old");
             System.out.println(CrudMembre.IdUserConnected);
             System.out.println(m1.toString());
+            TrayNotification tray = new TrayNotification();
+            tray.setTitle("Bonjour ,");
+            tray.setMessage(" Nous vous souhaitons une bonne journée");
+            tray.setNotificationType(NotificationType.SUCCESS);
+            tray.setRectangleFill(Paint.valueOf("#252f41"));
+            tray.setAnimationType(AnimationType.POPUP);
+            tray.showAndDismiss(Duration.seconds(8));
+
             Stage stage = (Stage) this.LoginViewFB.getScene().getWindow();
 
             stage.close();
@@ -67,6 +82,17 @@ public class FxmlLoginFbController {
             home.start(new Stage());
             System.out.println("new");
             System.out.println(m1.toString());
+
+            TrayNotification tray = new TrayNotification();
+            tray.setTitle("Bienvenue sur TakeMe ,");
+            tray.setMessage(" Félicitation ! Votre compte TakeMe a été bien creé");
+            tray.setNotificationType(NotificationType.SUCCESS);
+            tray.setRectangleFill(Paint.valueOf("#252f41"));
+            tray.setAnimationType(AnimationType.POPUP);
+            tray.setTrayIcon(new Image("ressources/img/img/logo.png"));
+
+            tray.showAndDismiss(Duration.seconds(8));
+
 
             Stage stage = (Stage) this.LoginViewFB.getScene().getWindow();
 

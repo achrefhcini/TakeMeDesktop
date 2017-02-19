@@ -1,6 +1,7 @@
 package controller;
 import controller.mains.*;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import java.net.URL;
@@ -16,8 +17,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
 import javafx.scene.Node;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import model.crud.CrudMembre;
+import tray.animations.AnimationType;
+import tray.notification.NotificationType;
+import tray.notification.TrayNotification;
 
 public class FxmlLoginController {
     EmailValidator emailValidator= new EmailValidator();
@@ -38,6 +44,8 @@ public class FxmlLoginController {
     @FXML
     void clickNuag1(MouseEvent event) {
         nbrClicknuag1++;
+
+
     }
 
     @FXML
@@ -63,6 +71,10 @@ public class FxmlLoginController {
         System.out.println(nbrClicknuag1);
         if ((nbrClicknuag1==2)&&(nbrClicknuag12==1)&&(nbrClicknuag3==2)){
             System.out.println("hello");
+
+
+
+
             LoginAdmin loginAdmin =new LoginAdmin();
             loginAdmin.start(new Stage());
             ((Node)(event.getSource())).getScene().getWindow().hide();
@@ -157,6 +169,15 @@ public class FxmlLoginController {
       int idmembre=  membre.VerfiConnexion(Email,Password);
 
         if((textFieldLoginEmail.getText().equals("root") && textFieldLoginPassword.getText().equals("root") )||(idmembre!=0)){
+            TrayNotification tray = new TrayNotification();
+            tray.setTitle("Bienvenue sur TakeMe ,");
+            tray.setMessage(" Nous vous souhaitons une bonne journée");
+            tray.setNotificationType(NotificationType.SUCCESS);
+            tray.setRectangleFill(Paint.valueOf("#252f41"));
+            tray.setAnimationType(AnimationType.POPUP);
+            tray.setTrayIcon(new Image("ressources/img/img/logo.png"));
+            tray.showAndDismiss(Duration.seconds(8));
+
             Menu home = new Menu();
             home.start(new Stage());
 

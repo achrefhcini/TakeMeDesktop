@@ -18,7 +18,7 @@ public class CrudNotification implements ICrudNotification {
     PreparedStatement prepste;
 
     public CrudNotification() throws SQLException, ClassNotFoundException {
-        c=DBConnect.getConnection();
+        c=DBConnect.getInstance();
     }
 
 
