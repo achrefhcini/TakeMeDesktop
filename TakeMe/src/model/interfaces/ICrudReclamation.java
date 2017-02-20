@@ -14,4 +14,5 @@ public interface ICrudReclamation {
     public boolean modifierReclamation(Reclamation R);
     public ArrayList<Reclamation> afficherReclamations();
     public Reclamation afficherReclamationById(int id);
+    public ArrayList<Reclamation> afficherReclamationByIdmembre(int idmembre);
 }

@@ -19,8 +19,8 @@ public class TestCrudFavoris {
        // System.out.println(a);
  // MD5hashing m=new MD5hashing("");
    //     System.out.println(m.Md5Encrypt());
-        ArrayList<Favoris> favori=f.afficherFavoriByuser(8);
-        System.out.println(favori.toString());
+        f.ajouterFavori(f1);
+
 
 
     }

