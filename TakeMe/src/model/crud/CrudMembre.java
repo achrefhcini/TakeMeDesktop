@@ -334,6 +334,7 @@ public class CrudMembre implements ICrudMembre {
             {
                 int id_membre=rs.getInt(1);
                 this.IdUserConnected=id_membre;
+
                 System.out.println(this.IdUserConnected);
                 return id_membre;
 
@@ -516,6 +517,34 @@ public class CrudMembre implements ICrudMembre {
         }
 
 return list;
+    }
+
+
+    public ArrayList<Membre> findUserByChampListview(String champ){
+        ArrayList<Membre>list=new ArrayList();
+        String[] splited = champ.split("\\s+");
+
+        String req="SELECT * from membre where num_tel LIKE '%"+champ+"%' OR email LIKE '%"+champ+"%'  OR ( LOCATE(nom,'"+champ+"') > 0  OR  LOCATE(prenom,'"+champ+"') > 0  )";
+
+        try {
+            ste=c.createStatement();
+            ResultSet rs=ste.executeQuery(req);
+            if (rs.next())
+            {
+                list.add(tabToIns(rs));
+                while (rs.next())
+                {
+                    list.add(tabToIns(rs));
+                }
+                return list;
+            }
+            else
+                return list;
+        } catch (SQLException e) {
+            System.out.println(e.toString());
+        }
+
+        return list;
     }
 
 

@@ -5,6 +5,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,6 +22,8 @@ import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import model.crud.CrudMembre;
+import model.crud.CrudSession;
+import model.entities.Session;
 import tray.animations.AnimationType;
 import tray.notification.NotificationType;
 import tray.notification.TrayNotification;
@@ -169,15 +172,12 @@ public class FxmlLoginController {
       int idmembre=  membre.VerfiConnexion(Email,Password);
 
         if((textFieldLoginEmail.getText().equals("root") && textFieldLoginPassword.getText().equals("root") )||(idmembre!=0)){
-            TrayNotification tray = new TrayNotification();
-            tray.setTitle("Bienvenue sur TakeMe ,");
-            tray.setMessage(" Nous vous souhaitons une bonne journée");
-            tray.setNotificationType(NotificationType.SUCCESS);
-            tray.setRectangleFill(Paint.valueOf("#252f41"));
-            tray.setAnimationType(AnimationType.POPUP);
-            tray.setTrayIcon(new Image("ressources/img/img/logo.png"));
-            tray.showAndDismiss(Duration.seconds(8));
 
+            LocalDate dateNow=LocalDate.now();
+            CrudSession crudSession = new CrudSession();
+            Session session=new Session(CrudMembre.IdUserConnected,dateNow,"desktop");
+            crudSession.ajouterSession(session);
+            notificationLogin();
             Menu home = new Menu();
             home.start(new Stage());
 
@@ -206,6 +206,18 @@ public class FxmlLoginController {
         FindUser findUser =new FindUser();
         findUser.start(new Stage());
         ((Node)(event.getSource())).getScene().getWindow().hide();
+
+    }
+
+    public void notificationLogin(){
+        TrayNotification tray = new TrayNotification();
+        tray.setTitle("Bienvenue sur TakeMe ,");
+        tray.setMessage(" Nous vous souhaitons une bonne journée");
+        tray.setNotificationType(NotificationType.SUCCESS);
+        tray.setRectangleFill(Paint.valueOf("#252f41"));
+        tray.setAnimationType(AnimationType.POPUP);
+        tray.setTrayIcon(new Image("ressources/img/img/logo.png"));
+        tray.showAndDismiss(Duration.seconds(8));
 
     }
 
