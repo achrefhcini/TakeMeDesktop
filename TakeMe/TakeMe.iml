@@ -28,7 +28,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="client-2.0.0-20170204.163650-1" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
