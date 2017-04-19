@@ -327,7 +327,7 @@ public class CrudMembre implements ICrudMembre {
         String emailuser="'"+email+"'";
         String PasswordMd5Hash="'"+md5.Md5Encrypt()+"'";
         try {
-            String req="SELECT id_membre FROM membre WHERE  password = "+PasswordMd5Hash+" AND email = "+ emailuser+" AND verifMail = 1 AND isActif = 1 AND role = 'Administrateur' ";
+            String req="SELECT id_membre FROM membre WHERE  password = "+PasswordMd5Hash+" AND email = "+ emailuser+" AND verifMail = 1 AND isActif = 1 AND LOCATE(ADMIN,CONVERT(roles,CHAR(50))>0 ";
             ste=c.createStatement();
             ResultSet rs=ste.executeQuery(req);
             if (rs.next())
