@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="stackpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="443.0" prefWidth="711.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FxmlVerifCodeReinsController">
+    <children>
+        <AnchorPane layoutX="-23.0" prefHeight="629.0" prefWidth="856.0" style="-fx-background-color: #252f41;">
+            <children>
+                <JFXButton fx:id="btn" layoutX="362.0" layoutY="375.0" onAction="#BtnVerifMail" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: #61d4c3;" text="Continuer" textFill="WHITE" />
+            <ImageView fitHeight="200.0" fitWidth="199.0" layoutX="572.0" layoutY="391.0">
+               <image>
+                  <Image url="@../ressources/img/Verif.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="308.0" layoutY="45.0" text="Entrer le code de sécurité !" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <JFXTextField id="name" fx:id="codeActivation" focusColor="WHITE" labelFloat="true" layoutX="309.0" layoutY="288.0" maxWidth="198.0" minWidth="138.0" prefHeight="31.0" prefWidth="198.0" promptText="Code d'activation" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <Text fill="WHITE" layoutX="131.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Merci de vérifier que vous avez reçu un e-mail avec votre code. Celui-ci est composé de 4 chiffres." wrappingWidth="564.13671875">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <Label fx:id="vMail" layoutX="343.0" layoutY="329.0" text="Code incorrect veuillez réessayer" textFill="#ff4747" visible="false" />
+            <ImageView fx:id="WvMail" fitHeight="17.0" fitWidth="18.0" layoutX="316.0" layoutY="329.0" visible="false">
+               <image>
+                  <Image url="@../ressources/img/img/warning.png" />
+               </image>
+            </ImageView>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>

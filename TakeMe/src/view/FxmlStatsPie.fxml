@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane fx:id="tochange" prefHeight="443.0" prefWidth="711.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FxmlStatsPieController">
+   <top>
+   </top>
+</BorderPane>

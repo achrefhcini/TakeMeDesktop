@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderpane" prefHeight="443.0" prefWidth="711.0" style="-fx-background-color: #252f41;" stylesheets="@../ressources/css/all.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FxmlUserViewController">
+   <left>
+      <StackPane prefHeight="240.0" prefWidth="30.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="imgLeft" nodeOrientation="RIGHT_TO_LEFT">
+               <image>
+                  <Image url="@../ressources/img/suivant.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Rectangle fx:id="barreleft" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="240.0" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#pagginationBack" onMouseEntered="#leftEntered" onMouseExited="#leftExited" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="30.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <StackPane.margin>
+                  <Insets left="2.0" />
+               </StackPane.margin>
+            </Rectangle>
+         </children>
+      </StackPane>
+   </left>
+   <right>
+      <StackPane prefHeight="240.0" prefWidth="30.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="imgright">
+               <image>
+                  <Image url="@../ressources/img/suivant.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <Rectangle fx:id="barreright" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="240.0" onMouseClicked="#pagginationAfter" onMouseEntered="#rightEntered" onMouseExited="#rightExited" opacity="0.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="30.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <StackPane.margin>
+                  <Insets right="2.0" />
+               </StackPane.margin>
+            </Rectangle>
+         </children>
+      </StackPane>
+   </right>
+   <center>
+      <VBox fx:id="vbox" fillWidth="false" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="15.0" prefWidth="623.0">
+               <children>
+                  <Label fx:id="afficherTous" contentDisplay="CENTER" text="Tous" textFill="#61d4c3">
+                     <font>
+                        <Font name="Arial Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="60.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <ImageView fx:id="iconTous" layoutX="227.0" layoutY="13.0" visible="false">
+                     <image>
+                        <Image url="@../ressources/img/img/ASC.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="afficherParNom" contentDisplay="CENTER" text="Nom" textFill="#61d4c3">
+                     <font>
+                        <Font name="Arial Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <ImageView fx:id="iconParNom" visible="false">
+                     <image>
+                        <Image url="@../ressources/img/img/ASC.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="afficherParPrenom" contentDisplay="CENTER" layoutX="139.0" layoutY="10.0" text="Prenom" textFill="#61d4c3">
+                     <font>
+                        <Font name="Arial Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <ImageView fx:id="iconParPrenom" layoutX="242.0" layoutY="13.0" visible="false">
+                     <image>
+                        <Image url="@../ressources/img/img/ASC.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="afficherParAge" contentDisplay="CENTER" layoutX="397.0" layoutY="10.0" text="Age" textFill="#61d4c3">
+                     <font>
+                        <Font name="Arial Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <ImageView fx:id="iconParAge" layoutX="247.0" layoutY="13.0" visible="false">
+                     <image>
+                        <Image url="@../ressources/img/img/ASC.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="afficherParSexe" contentDisplay="CENTER" layoutX="451.0" layoutY="10.0" text="Sexe" textFill="#61d4c3">
+                     <font>
+                        <Font name="Arial Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <ImageView fx:id="iconParSexe" layoutX="422.0" layoutY="13.0" visible="false">
+                     <image>
+                        <Image url="@../ressources/img/img/ASC.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="afficherParEtat" contentDisplay="CENTER" layoutX="479.0" layoutY="10.0" text="Etat" textFill="#61d4c3">
+                     <font>
+                        <Font name="Arial Bold" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <ImageView fx:id="iconParEtat" layoutX="572.0" layoutY="13.0" visible="false">
+                     <image>
+                        <Image url="@../ressources/img/img/ASC.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox fx:id="hbox1" alignment="TOP_CENTER" fillHeight="false" VBox.vgrow="SOMETIMES">
+               <children>
+                  <StackPane fx:id="userView1" prefHeight="500.0" prefWidth="600.0" style="-fx-border-color: #252f41; -fx-background-color: #61d4c3;">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="600.0" prefWidth="300.0" StackPane.alignment="CENTER">
+                           <children>
+                              <Circle fx:id="circle1" fill="#1f96ff00" radius="50.0" smooth="false" stroke="WHITE" strokeType="INSIDE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Circle>
+                              <Label fx:id="name1" alignment="CENTER" text="User" textAlignment="CENTER" textFill="#252f41">
+                                 <font>
+                                    <Font name="Arial" size="28.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="actionBloq1">
+                                       <image>
+                                          <Image url="@../ressources/img/block.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                    <ImageView fx:id="actionReclamation1">
+                                       <image>
+                                          <Image url="@../ressources/img/img/verygood.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </StackPane>
+                  <StackPane fx:id="userView2" layoutX="10.0" layoutY="10.0" prefHeight="500.0" prefWidth="600.0" style="-fx-border-color: #252f41; -fx-background-color: #61d4c3;">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="600.0" prefWidth="300.0" StackPane.alignment="CENTER">
+                           <children>
+                              <Circle fx:id="circle2" fill="#1f96ff00" radius="50.0" stroke="WHITE" strokeType="INSIDE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Circle>
+                              <Label fx:id="name2" alignment="CENTER" text="User" textAlignment="CENTER" textFill="#252f41">
+                                 <font>
+                                    <Font name="Arial" size="28.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="actionBloq2">
+                                       <image>
+                                          <Image url="@../ressources/img/block.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                    <ImageView fx:id="actionReclamation2">
+                                       <image>
+                                          <Image url="@../ressources/img/img/verygood.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </StackPane>
+                  <StackPane fx:id="userView3" layoutX="326.0" layoutY="10.0" prefHeight="500.0" prefWidth="600.0" style="-fx-border-color: #252f41; -fx-background-color: #61d4c3;">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="600.0" prefWidth="300.0" StackPane.alignment="CENTER">
+                           <children>
+                              <Circle fx:id="circle3" fill="#1f96ff00" radius="50.0" stroke="WHITE" strokeType="INSIDE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Circle>
+                              <Label fx:id="name3" alignment="CENTER" text="User" textAlignment="CENTER" textFill="#252f41">
+                                 <font>
+                                    <Font name="Arial" size="28.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="actionBloq3">
+                                       <image>
+                                          <Image url="@../ressources/img/block.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                    <ImageView fx:id="actionReclamation3">
+                                       <image>
+                                          <Image url="@../ressources/img/img/verygood.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </StackPane>
+                  <StackPane fx:id="userView4" prefHeight="500.0" prefWidth="600.0" style="-fx-border-color: #252f41; -fx-background-color: #61d4c3;">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="600.0" prefWidth="300.0" StackPane.alignment="CENTER">
+                           <children>
+                              <Circle fx:id="circle4" fill="#1f96ff00" radius="50.0" stroke="WHITE" strokeType="INSIDE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Circle>
+                              <Label fx:id="name4" alignment="CENTER" text="User" textAlignment="CENTER" textFill="#252f41">
+                                 <font>
+                                    <Font name="Arial" size="28.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="actionBloq4">
+                                       <image>
+                                          <Image url="@../ressources/img/block.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                    <ImageView fx:id="actionReclamation4">
+                                       <image>
+                                          <Image url="@../ressources/img/img/verygood.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </StackPane>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox fx:id="hbox2" alignment="TOP_CENTER" fillHeight="false" VBox.vgrow="SOMETIMES">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+               <children>
+                  <StackPane fx:id="userView5" prefHeight="500.0" prefWidth="600.0" style="-fx-border-color: #252f41; -fx-background-color: #61d4c3;">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="600.0" prefWidth="300.0" StackPane.alignment="CENTER">
+                           <children>
+                              <Circle fx:id="circle5" fill="#1f96ff00" radius="50.0" stroke="WHITE" strokeType="INSIDE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Circle>
+                              <Label fx:id="name5" alignment="CENTER" text="User" textAlignment="CENTER" textFill="#252f41">
+                                 <font>
+                                    <Font name="Arial" size="28.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="actionBloq5">
+                                       <image>
+                                          <Image url="@../ressources/img/block.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                    <ImageView fx:id="actionReclamation5">
+                                       <image>
+                                          <Image url="@../ressources/img/img/verygood.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </StackPane>
+                  <StackPane fx:id="userView6" prefHeight="500.0" prefWidth="600.0" style="-fx-border-color: #252f41; -fx-background-color: #61d4c3;">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="600.0" prefWidth="300.0" StackPane.alignment="CENTER">
+                           <children>
+                              <Circle fx:id="circle6" fill="#1f96ff00" radius="50.0" stroke="WHITE" strokeType="INSIDE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Circle>
+                              <Label fx:id="name6" alignment="CENTER" text="User" textAlignment="CENTER" textFill="#252f41">
+                                 <font>
+                                    <Font name="Arial" size="28.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="actionBloq6">
+                                       <image>
+                                          <Image url="@../ressources/img/block.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                    <ImageView fx:id="actionReclamation6">
+                                       <image>
+                                          <Image url="@../ressources/img/img/verygood.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </StackPane>
+                  <StackPane fx:id="userView7" prefHeight="500.0" prefWidth="600.0" style="-fx-border-color: #252f41; -fx-background-color: #61d4c3;">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="600.0" prefWidth="300.0" StackPane.alignment="CENTER">
+                           <children>
+                              <Circle fx:id="circle7" fill="#1f96ff00" radius="50.0" stroke="WHITE" strokeType="INSIDE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Circle>
+                              <Label fx:id="name7" alignment="CENTER" text="User" textAlignment="CENTER" textFill="#252f41">
+                                 <font>
+                                    <Font name="Arial" size="28.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="actionBloq7">
+                                       <image>
+                                          <Image url="@../ressources/img/block.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <ImageView fx:id="actionReclamation7">
+                                       <image>
+                                          <Image url="@../ressources/img/img/verygood.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </StackPane>
+                  <StackPane fx:id="userView8" prefHeight="500.0" prefWidth="600.0" style="-fx-border-color: #252f41; -fx-background-color: #61d4c3;">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="600.0" prefWidth="300.0" StackPane.alignment="CENTER">
+                           <children>
+                              <Circle fx:id="circle8" fill="#1f96ff00" radius="50.0" stroke="WHITE" strokeType="INSIDE">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></Circle>
+                              <Label fx:id="name8" alignment="CENTER" text="User" textAlignment="CENTER" textFill="#252f41">
+                                 <font>
+                                    <Font name="Arial" size="28.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fx:id="actionBloq8">
+                                       <image>
+                                          <Image url="@../ressources/img/block.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                    <ImageView fx:id="actionReclamation8">
+                                       <image>
+                                          <Image url="@../ressources/img/img/verygood.png" />
+                                       </image>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <BorderPane.margin>
+            <Insets top="20.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+   <top>
+      <HBox alignment="CENTER" prefHeight="19.0" prefWidth="624.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="labelNbrUtilisateur" prefHeight="19.0" prefWidth="107.0" text="200 utilisateurs" textFill="WHITE" textOverrun="WORD_ELLIPSIS">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="champSearch" focusColor="WHITE" maxWidth="196.0" minWidth="119.0" prefHeight="31.0" prefWidth="122.0" promptText="Par nom, prenom, .." style="-fx-text-inner-color: white;" unFocusColor="WHITE">
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin>
+            </JFXTextField>
+            <JFXButton buttonType="RAISED" onMouseClicked="#chercherParEmail" prefHeight="25.0" prefWidth="82.0" ripplerFill="#751515" style="-fx-background-color: #61d4c3;" text="Chercher" textFill="#461616">
+               <HBox.margin>
+                  <Insets right="30.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXTextField fx:id="id_from" focusColor="WHITE" layoutX="360.0" layoutY="10.0" maxWidth="196.0" minWidth="119.0" prefHeight="31.0" prefWidth="140.0" promptText="Afficher a partir du (id)" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXButton buttonType="RAISED" layoutX="571.0" layoutY="13.0" onMouseClicked="#affichierApartir" prefHeight="25.0" prefWidth="83.0" ripplerFill="#751515" style="-fx-background-color: #61d4c3;" text="Afficher" textFill="#461616" />
+         </children>
+         <BorderPane.margin>
+            <Insets left="10.0" right="10.0" top="20.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+</BorderPane>

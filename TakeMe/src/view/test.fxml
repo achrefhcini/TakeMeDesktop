@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.lynden.gmapsfx.GoogleMapView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane id="AnchorPane" alignment="TOP_LEFT" prefHeight="443.0" prefWidth="711.0" style="-fx-background-color: #252f41;" stylesheets="@../ressources/css/all.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <GoogleMapView fx:id="mapView" />
+        <TextField fx:id="fromTextField" prefHeight="27.0" prefWidth="222.0" promptText="From:" />
+        <TextField fx:id="toTextField" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="222.0" promptText="To:" />
+      <StackPane maxWidth="-Infinity" prefHeight="443.0" prefWidth="230.0" style="-fx-background-color: red;">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <StackPane layoutX="10.0" layoutY="158.0" prefHeight="200.0" prefWidth="231.0" style="-fx-background-color: #61d4c3; -fx-border-image-width: 2; -fx-border-color: #252f41;">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#252f41" height="26.0" stroke="#252f41" strokeType="INSIDE" width="231.0" StackPane.alignment="TOP_LEFT" />
+                        <Label text="Label" textFill="WHITE" StackPane.alignment="TOP_LEFT">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <StackPane.margin>
+                              <Insets left="10.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Circle fill="#cce6ff" radius="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" StackPane.alignment="CENTER_LEFT">
+                           <StackPane.margin>
+                              <Insets left="5.0" top="10.0" />
+                           </StackPane.margin>
+                        </Circle>
+                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="164.0" text="Next Covoiturage" textAlignment="JUSTIFY" StackPane.alignment="CENTER_RIGHT">
+                           <StackPane.margin>
+                              <Insets bottom="10.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="77.0" layoutY="64.0" prefHeight="30.0" prefWidth="161.0" text="Next Covoiturage" textAlignment="JUSTIFY" StackPane.alignment="CENTER_RIGHT">
+                           <StackPane.margin>
+                              <Insets bottom="10.0" top="50.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0d1a32" height="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="231.0" StackPane.alignment="BOTTOM_CENTER" />
+                        <Label text="Voir Profil" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Arial Bold" size="19.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="3.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="231.0" style="-fx-background-color: #61d4c3; -fx-border-image-width: 2; -fx-border-color: #252f41;">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#252f41" height="26.0" stroke="#252f41" strokeType="INSIDE" width="231.0" StackPane.alignment="TOP_LEFT" />
+                        <Label text="Label" textFill="WHITE" StackPane.alignment="TOP_LEFT">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <StackPane.margin>
+                              <Insets left="10.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Circle fill="#cce6ff" radius="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" StackPane.alignment="CENTER_LEFT">
+                           <StackPane.margin>
+                              <Insets left="5.0" top="10.0" />
+                           </StackPane.margin>
+                        </Circle>
+                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="164.0" text="Next Covoiturage" textAlignment="JUSTIFY" StackPane.alignment="CENTER_RIGHT">
+                           <StackPane.margin>
+                              <Insets bottom="10.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="77.0" layoutY="64.0" prefHeight="30.0" prefWidth="161.0" text="Next Covoiturage" textAlignment="JUSTIFY" StackPane.alignment="CENTER_RIGHT">
+                           <StackPane.margin>
+                              <Insets bottom="10.0" top="50.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0d1a32" height="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="231.0" StackPane.alignment="BOTTOM_CENTER" />
+                        <Label text="Voir Profil" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Arial Bold" size="19.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="3.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="231.0" style="-fx-background-color: #61d4c3; -fx-border-image-width: 2; -fx-border-color: #252f41;">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#252f41" height="26.0" stroke="#252f41" strokeType="INSIDE" width="231.0" StackPane.alignment="TOP_LEFT" />
+                        <Label text="Label" textFill="WHITE" StackPane.alignment="TOP_LEFT">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <StackPane.margin>
+                              <Insets left="10.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Circle fill="#cce6ff" radius="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" StackPane.alignment="CENTER_LEFT">
+                           <StackPane.margin>
+                              <Insets left="5.0" top="10.0" />
+                           </StackPane.margin>
+                        </Circle>
+                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="164.0" text="Next Covoiturage" textAlignment="JUSTIFY" StackPane.alignment="CENTER_RIGHT">
+                           <StackPane.margin>
+                              <Insets bottom="10.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="77.0" layoutY="64.0" prefHeight="30.0" prefWidth="161.0" text="Next Covoiturage" textAlignment="JUSTIFY" StackPane.alignment="CENTER_RIGHT">
+                           <StackPane.margin>
+                              <Insets bottom="10.0" top="50.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0d1a32" height="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="231.0" StackPane.alignment="BOTTOM_CENTER" />
+                        <Label text="Voir Profil" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Arial Bold" size="19.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="3.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+                  <StackPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="231.0" style="-fx-background-color: #61d4c3; -fx-border-image-width: 2; -fx-border-color: #252f41;">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#252f41" height="26.0" stroke="#252f41" strokeType="INSIDE" width="231.0" StackPane.alignment="TOP_LEFT" />
+                        <Label text="Label" textFill="WHITE" StackPane.alignment="TOP_LEFT">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <StackPane.margin>
+                              <Insets left="10.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Circle fill="#cce6ff" radius="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" StackPane.alignment="CENTER_LEFT">
+                           <StackPane.margin>
+                              <Insets left="5.0" top="10.0" />
+                           </StackPane.margin>
+                        </Circle>
+                        <Label alignment="CENTER" prefHeight="32.0" prefWidth="164.0" text="Next Covoiturage" textAlignment="JUSTIFY" StackPane.alignment="CENTER_RIGHT">
+                           <StackPane.margin>
+                              <Insets bottom="10.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="77.0" layoutY="64.0" prefHeight="30.0" prefWidth="161.0" text="Next Covoiturage" textAlignment="JUSTIFY" StackPane.alignment="CENTER_RIGHT">
+                           <StackPane.margin>
+                              <Insets bottom="10.0" top="50.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0d1a32" height="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="231.0" StackPane.alignment="BOTTOM_CENTER" />
+                        <Label text="Voir Profil" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" StackPane.alignment="BOTTOM_CENTER">
+                           <font>
+                              <Font name="Arial Bold" size="19.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="3.0" />
+                           </padding>
+                        </Label>
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+    </children>
+</StackPane>
